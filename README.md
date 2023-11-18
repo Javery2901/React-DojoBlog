@@ -1,10 +1,10 @@
 ## Learning Points
 1. onClick:
-    <button onClick={handleClick}>Click me</button> 
-    <button onClick={() => handleClickAgain('Javy')}>Click me again</button> 
+    - 1.1 <button onClick={handleClick}>Click me</button> 
+    - 1.2 <button onClick={() => handleClickAgain('Javy')}>Click me again</button> 
 2. useState
-    import {useState} from "react";
-    const [name, setName] = useState('Jevy');
-    const handleClickHook = () => setName("Jevy Hu");
+    - 2.1 import {useState} from "react";
+    - 2.2 const [name, setName] = useState('Jevy');
+    - 2.3 const handleClickHook = () => setName("Jevy Hu");
 
 
