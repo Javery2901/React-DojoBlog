@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-Learn in Autumn 2023, this is my first React self-learned small project. 
+Made in Autumn 2023, this is my first React self-learned small project. 
 
 1. In main branch, the last-version project is saved.
 2. In other branches, some learning points of different versions are also quite useful. Check the learning points by each README file. 
