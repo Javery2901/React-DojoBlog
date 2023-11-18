@@ -2,6 +2,10 @@
 
 Learn in Autumn 2023, this is my first React self-learned small project. 
 
+1. In main branch, the last-version project is saved.
+2. In other branches, some learning points of different versions are also quite useful. Check the learning points by each README file. 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
