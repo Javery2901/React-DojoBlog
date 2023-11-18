@@ -1,41 +1,32 @@
 import {useState} from "react";
+import BlogList from "./BlogList";
 
 const Home = () => {
-  // 括号内的参数看需要添加
-  const handleClick = () => {
-    console.log("hello, ninjas");
-  }
-  
-  const handleClickAgain = (name) => { 
-    console.log("hello, " + name);
-  }
 
-  const [name, setName] = useState('Jevy'); // 可以是多种数据类型
-  const [age, setAge] = useState(28); // 可以是多种数据类型
-  
-  const handleClickHook = () => {
-    setName("Jevy Hu");
-    setAge(100);
+  // 进行循环操作，可以用javascript的map
+  const [blogs, setBlogs] = useState([
+    { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1 },
+    { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
+    { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
+  ]);
+
+  // use prop, 不会真正改变原数据，仅仅是这里处理过滤
+  const handleDelete = (id) => {
+    // filter, 如果id不是我们想删除的id，则返回true，如果是我们删除的则返回false
+    const newBlogs = blogs.filter(blog => blog.id !== id);
+    setBlogs(newBlogs);
   }
 
   return (
+    // 我们需要将blogs数据弄进BlogList, Home可以看作是父component，而BlogList是子component
+    // blogs={blogs} 这种方式下，blogs可以被传入BlogList as a prop
     <div className="home">
-      <h2>Homepage</h2>
+      <BlogList blogs={blogs} title ="All Blogs!" handleDelete = {handleDelete}/>
 
-      {/* onClick={handleClick}不加括号，加括号代表自动调用，即用户每点击button就已经运行handleClick */}
-      <button onClick={handleClick}>Click me</button> 
-
-      {/* 因此采用匿名函数的方式，相当于handleClickAgain('Javy')被()匿名函数封装
-       但对于handleClickAgain来说，函数是一定有一个参数的，但如果直接像onClick={handleClickAgain("Javy")}这么写会直接调用运行，而不是用户点击了button才运行 */}
-      <button onClick={() => handleClickAgain('Javy')}>Click me again</button> 
-
-      {/* 在这里name已经显示在页面上，当我点击后希望改变这个name，则需要使用useState，能进行捕捉 
-       useState需要import,并且注意其用法*/}
-      <p>{ name } is{ age } years old</p>
-      <button onClick = {handleClickHook}> Click me to change </button> 
-
+      {/* 进行一次过滤，BlogList代码代码再次使用，但是这次添加一个作者过滤 */}
+      <BlogList blogs={blogs.filter(blog => blog.author === "mario")} title ="mario Blogs" handleDelete = {handleDelete}/>
     </div>
   );
 }
-   
-  export default Home;
+  
+export default Home;

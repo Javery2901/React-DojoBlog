@@ -1,10 +1,9 @@
 ## Learning Points
-1. onClick:
-    - 1.1 <button onClick={handleClick}>Click me</button> 
-    - 1.2 <button onClick={() => handleClickAgain('Javy')}>Click me again</button> 
-2. useState
-    - 2.1 import {useState} from "react";
-    - 2.2 const [name, setName] = useState('Jevy');
-    - 2.3 const handleClickHook = () => setName("Jevy Hu");
+1. Outputting List:
+    - 1.1 BlogList和Home的关联很重要，通过props
+    
+2. Props, BlogList
+    - 2.1 props可以增加代码重用性
+    - 2.2 在BlogList组件中就可以使用Home组件中的list
 
 
