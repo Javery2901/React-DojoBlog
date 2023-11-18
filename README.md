@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Learn in Autumn 2023, this is my first React self-learned small project. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
